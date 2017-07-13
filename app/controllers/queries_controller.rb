@@ -1,5 +1,5 @@
 get "/queries/new" do
-  "GET queries route"
+  erb :"/queries/new"
 end
 
 post "/queries" do
