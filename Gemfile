@@ -21,6 +21,8 @@ group :test do
   gem 'capybara'
 end
 
+gem 'unirest'
+gem 'dotenv'
 
 group :test, :development do
   gem 'factory_girl'
