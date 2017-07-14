@@ -3,7 +3,7 @@ get "/queries/new" do
 end
 
 post "/queries" do
-  @query = Queries.new(params[:query])
+  @query = Query.new(params[:query])
   if @query.save
     redirect "/queries/#{@query.id}"
   else
@@ -14,7 +14,7 @@ post "/queries" do
 end
 
 get "/queries/:id" do
-  query = Queries.find_by(id: params[:id])
+  query = Query.find_by(id: params[:id])
   response = Unirest.get "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/upc/#{query.barcode}",
   headers:{
     "X-Mashape-Key" => ENV['SPOON_KEY'],
