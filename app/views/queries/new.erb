@@ -1,16 +1,19 @@
-<h1>Get Started Recycling...
-  <small>Enter your product UPC for detailed recycling instructions</small>
-</h1>
-<section class="contact-wrap">
-  <form method="post" action="/queries" class="contact-form">
-    <div class="col-sm-12">
-      <div class="input-block">
-        <label for="">Barcode</label>
-        <input type="text" class="form-control">
-      </div>
-    </div>
-    <div class="col-sm-12">
-      <button class="square-button">Submit</button>
-    </div>
-  </form>
-</section>
+<h1>Get Started Recycling...</h1>
+<h2>Enter your product UPC for detailed recycling instructions:</h2>
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+<form method="post" action="/queries">
+  <div>
+    <label>Barcode
+      <input type="text" name="query[barcode]">
+    </label>
+  </div>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>
