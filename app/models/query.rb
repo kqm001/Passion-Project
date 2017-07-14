@@ -1,4 +1,4 @@
-class Queries < ActiveRecord::Base
+class Query < ActiveRecord::Base
   validates :barcode, :presence => true
   validate :is_integer_string, :is_twelve_characters
 
@@ -14,6 +14,6 @@ class Queries < ActiveRecord::Base
     end
   end
 
-  belongs_to :users
+  belongs_to :user
   has_many :results
 end

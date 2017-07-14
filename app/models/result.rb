@@ -1,4 +1,4 @@
-class Results < ActiveRecord::Base
+class Result < ActiveRecord::Base
   validates :material_id, :queries_id, :presence => true
 
   has_many :materials

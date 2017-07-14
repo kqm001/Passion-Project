@@ -23,6 +23,7 @@ end
 
 gem 'unirest'
 gem 'dotenv'
+gem 'bcrypt'
 
 group :test, :development do
   gem 'factory_girl'
