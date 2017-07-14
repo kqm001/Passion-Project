@@ -5,6 +5,8 @@ def material_selector(barcode)
     materials = [7]
   elsif barcode == "051500255377"
     matierals = [5, 6]
+  else
+    materials = [1, 2, 3]
   end
   materials
 end
