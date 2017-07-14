@@ -1,19 +1,21 @@
-<h1>Get Started Recycling...</h1>
-<h2>Enter your product UPC for detailed recycling instructions:</h2>
-<% if @errors %>
-  <ul>
-    <% @errors.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
-<form method="post" action="/queries">
-  <div>
-    <label>Barcode
-      <input type="text" name="query[barcode]">
-    </label>
-  </div>
-  <div>
-    <input type="submit" value="Submit">
-  </div>
-</form>
+<div class="container">
+  <h4>Get Started Recycling...</h4>
+  <h5>Enter your product UPC for detailed recycling instructions:</h5>
+  <% if @errors %>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <form method="post" action="/queries">
+    <div>
+      <label>Barcode
+        <input class="input-field" type="text" name="query[barcode]">
+      </label>
+    </div>
+    <div>
+      <input class="btn waves-effect waves-light light-green" type="submit" value="Submit">
+    </div>
+  </form>
+</div>

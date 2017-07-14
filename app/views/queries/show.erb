@@ -1,7 +1,12 @@
-<h1><%= @product %></h1>
-<p>Materials:</p>
-<ul>
-  <% material_selector.each do |material| %>
-    <li><%= material %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h3><%= @product %></h3>
+  <p id="material-title">Materials:</p>
+  <ul>
+    <% material_selector(@barcode).each do |material| %>
+      <% p_material = Material.find_by(id: material) %>
+      <li><p class="material"><%= p_material.name %></p>
+        <p><%= p_material.information %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
