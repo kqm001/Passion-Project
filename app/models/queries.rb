@@ -13,4 +13,7 @@ class Queries < ActiveRecord::Base
       errors.add(:barcode, "needs to be a 12 digits long")
     end
   end
+
+  belongs_to :users
+  has_many :results
 end
