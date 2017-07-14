@@ -1,1 +1,18 @@
+#material-title {
+  color: #8bc34a;
+  font-weight: 500;
+  font-size: 20px;
+}
 
+.material {
+  color: #8bc34a;
+}
+
+.input-field input[type=text]:focus + label {
+  color: #8bc34a;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #8bc34a;
+  box-shadow: 0 1px 0 0 #8bc34a;
+}

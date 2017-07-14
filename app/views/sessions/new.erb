@@ -1,0 +1,23 @@
+
+<div class="container">
+  <h4>Login</h4>
+  <%if @errors%>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <form method="post" action="/login">
+    <label>Email:
+      <input class="input-field" type="text" name="user[email]"/>
+    </label>
+    <br>
+    <label>Password:
+      <input class="input-field" type="password" name="user[password]"/>
+    </label>
+    <br>
+    <input class="btn waves-effect waves-light light-green" type="submit" value="Login"/>
+  </form>
+</div>

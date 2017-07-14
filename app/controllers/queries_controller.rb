@@ -14,8 +14,15 @@ post "/queries" do
 end
 
 get "/queries/:id" do
-  query = Query.find_by(id: params[:id])
-  response = Unirest.get "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/upc/#{query.barcode}",
+  p "*" * 10
+  p params
+  p "*" * 10
+  @barcode = Query.find_by(id: params[:id]).barcode
+  p "*" * 10
+  p @barcode
+  p "*" * 10
+
+  response = Unirest.get "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/upc/#{@barcode}",
   headers:{
     "X-Mashape-Key" => ENV['SPOON_KEY'],
     "Accept" => "application/json"
