@@ -14,13 +14,7 @@ post "/queries" do
 end
 
 get "/queries/:id" do
-  p "*" * 10
-  p params
-  p "*" * 10
   @barcode = Query.find_by(id: params[:id]).barcode
-  p "*" * 10
-  p @barcode
-  p "*" * 10
 
   response = Unirest.get "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/upc/#{@barcode}",
   headers:{
